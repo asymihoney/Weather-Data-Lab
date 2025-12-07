@@ -1,0 +1,4 @@
+requests
+pandas
+airflow
+psycopg2-binary
