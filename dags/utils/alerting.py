@@ -1,4 +1,5 @@
 from airflow.utils.email import send_email
+from airflow.models import Variable
 
 def task_failure_alert(context):
     task = context["task_instance"]
@@ -18,8 +19,11 @@ def task_failure_alert(context):
     </ul>
     """
 
+    # Mengambil email dari Airflow Variables, jika tidak ada, gunakan default
+    alert_email = Variable.get("ALERT_EMAIL", default_var="dsforasmi1@gmail.com")
+
     send_email(
-        to=["dsforasmi1@gmail.com"],
+        to=[alert_email],
         subject=subject,
         html_content=html_content,
     )
