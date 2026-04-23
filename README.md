@@ -478,7 +478,7 @@ docker compose up -d
 
 ---
 
-## Phase 6: BI Dashboard (Metabase)
+## Phase 6: BI Dashboard
 
 ### Phase 6.1: Add Metabase (Docker)
 
